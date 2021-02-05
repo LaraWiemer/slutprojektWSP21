@@ -7,10 +7,6 @@ enable :sessions
 
 
 
-
-
-
-
 get('/ad/new') do
     slim(:"ads/create")
 end
