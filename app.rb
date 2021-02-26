@@ -18,8 +18,10 @@ end
 post("/ad/new") do
     ad_name = params[:new_ad_name]
     description = params[:description]
-    img_url = params[:img_url]
+    img_url = params[:img]
     price = params[:price]
+    path = File.join("/img/uploaded_pictures/",params[:file][:filename])    
+    File.write(path,File.read(params[:file][:tempfile]))
     add_ad(ad_name, description, img_url, price)
     redirect("/")
 end
