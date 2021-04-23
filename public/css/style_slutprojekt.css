@@ -1,0 +1,70 @@
+.header{
+    background-color: beige;
+    grid-template-rows: 50vh 50vh;
+    grid-template-columns: 30vw 30vw 30vw;
+}
+
+.login_link{
+    grid-row: 2;
+    grid-column: 1;
+}
+
+.register_link{
+    grid-row: 2;
+    grid-column: 2;
+}
+
+.create_ad_link{
+    grid-row: 2;
+    grid-column: 3;
+}
+
+
+
+
+section{
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+}
+
+.ad{
+    display: grid;
+    grid-template-rows: 40% 60%;
+    grid-template-columns: 25% 25% 50%;
+    height: 20vh;
+    width: 30vw;
+    margin: 5px;
+    margin-top: 5%;
+    border: solid;
+}
+
+.picture{
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column: 3;
+    height: 250%;
+    width: 100%;
+    justify-content: left;
+
+}
+
+.ad_name{
+    grid-row: 1;
+    grid-column: 1; 
+    font-size: 24px;
+    margin-bottom: 40%;
+}
+
+.ad_desc{
+    grid-row: 2;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.ad_price{
+    grid-row: 1;
+    grid-column: 2;
+    color: red;
+    margin-top: 20%;
+}
