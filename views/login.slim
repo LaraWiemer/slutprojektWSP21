@@ -1,10 +1,5 @@
-body
-    header class="header"
-        h1 Köp&Sälj
-        a href="Login" Log in
-        a href="register" Sign up
-    h2 Log in
-    form action="/login" method="post"
-        input type="text" name="username" placeholder="Username"
-        input type="text" name="password" placeholder="Password"
-        input type="submit" name="Log in"
+section class="login_form_container"    
+    form class="login_form" action="/login" method="post"
+        input class="login_username" type="text" name="username" placeholder="Username"
+        input class="login_password" type="password" name="password" placeholder="Password"
+        input class="login_submit" type="submit" value="Logga in"

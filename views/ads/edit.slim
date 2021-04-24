@@ -1,0 +1,16 @@
+
+h3 Ändra information
+form action="/ads/#{advertisements['ad_id'].to_i}/update" method="post"
+    input type="text" name="ad_name" value="#{advertisements['name']}"
+    input type="text" name="description" value="#{advertisements['description']}"
+    input type="text" name="price" value="#{advertisements['price']}"
+    input type="hidden" name="old_img_path" value="#{advertisements['img_path']}"
+    input type="hidden" name="ad_id" value="#{advertisements['ad_id']}"
+    input type="submit" value="Ändra"
+
+h3 Ändra bild
+
+form action="/ads/#{advertisements['ad_id'].to_i}/update_picture" method="post" enctype="multipart/form-data"
+    input type="file" name="file"
+    input type="hidden" name="ad_id" value="#{advertisements['ad_id'].to_i}"
+    input type="submit" value="Ändra bild"

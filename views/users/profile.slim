@@ -1,0 +1,19 @@
+
+h2 Ämnen
+
+
+h2 Dina annonser
+
+section class="ad_section"
+    -advertisements.each do |ad|
+        article class="profile_ad"
+            p class="ad_name" = ad["name"] 
+            p class="ad_desc" = ad["description"] 
+            p class="ad_price" = ad["price"] 
+            img src="#{ad["img_path"]}" alt="Image not found" class="picture"
+            form class="ad_edit_link" action="/ads/edit" method="get"
+                input type="hidden" name="ad_id" value="#{ad['ad_id']}"
+                input type="submit" value="Ändra"
+            form class="ad_delete_form" action="/ads/#{ad["ad_id"]}/delete" method="post"
+                input type="hidden"  name="ad_id" value="#{ad['ad_id']}"
+                input type="submit" value="Ta bort"

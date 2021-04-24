@@ -5,6 +5,17 @@ html lang="en"
         meta name="viewport" content="width=device-width, initial-scale=1.0"/
         meta http-equiv="X-UA-Compatible" content="ie=edge"/
         link rel="stylesheet" href="/css/style_slutprojekt.css"/
-        title Document
+        title Köp&Sälj
     body
+        header class="header"
+            h1 class="logotype" Köp&Sälj
+            -if session[:user_id] != nil
+                a class="create_ad_link" href="/ads/new" Skapa annons
+                a class="profile_link" href="/users/profile"
+                    img class="profile_link_img" src="/img/system_icons/account_circle_black_24dp.svg"
+                a class="logout_link" href="/users/logout" Logga ut
+            -else
+                a class="login_link" href="/login" Logga in
+                a class="register_link" href="/register" Registrera
+
         ==yield

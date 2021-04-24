@@ -26,13 +26,12 @@ post("/ads/new") do
     ad_name = params[:ad_name]
     description = params[:description]
     price = params[:price]
-    user_id = session[:user_id]
+    user_id = session[:user_id].to_i #sessionen är tom?
     original_filename = params[:file][:filename]
     file_ending = search_file_ending(original_filename)
-    filename = SecureRandom.uuid + file_ending #gör så att den kollar ändelse; params[:file][:filename]
+    filename = SecureRandom.uuid + file_ending
     save_path = File.join("./public/img/uploaded_pictures/", filename)
     db_path = File.join("/img/uploaded_pictures/", filename)
-    #File.write(save_path,File.read(params[:file][:tempfile]))
     FileUtils.cp(params[:file][:tempfile], "./public/img/uploaded_pictures/#{filename}")
     add_ad(ad_name, description, db_path, price, user_id)
     redirect("/")
@@ -64,6 +63,7 @@ post('/login') do
     password = params[:password]
     login_result = login(username, password)
     if login_result == true
+        # locate_user_id(username)
         redirect('/')
     else
         redirect('/login_error')
@@ -76,4 +76,51 @@ end
 
 get("/register_error") do
     slim(:register_error)
+end
+
+get("/users/logout") do
+    session[:user_id] = nil
+    redirect("/")
+end
+
+get("/users/profile") do
+    user_id = session[:user_id].to_i
+    result = ads_by_user(user_id)
+    slim(:"/users/profile", locals:{advertisements:result})
+end
+
+get("/ads/edit") do
+    ad_id = params[:ad_id].to_i
+    user_id = session[:user_id]
+    result = ad_content(ad_id).first
+    slim(:"/ads/edit", locals:{advertisements:result})
+end
+
+post("/ads/:id/update") do
+    id = params[:ad_id].to_i
+    ad_name = params[:ad_name]
+    description = params[:description]
+    price = params[:price]
+    user_id = session[:user_id].to_i
+    update_ad(ad_name, description, price, id)
+    redirect("/users/profile")
+end
+
+
+post("/ads/:id/update_picture") do
+    id = params[:ad_id].to_i
+    original_filename = params[:file][:filename]
+    file_ending = search_file_ending(original_filename)
+    filename = SecureRandom.uuid + file_ending
+    save_path = File.join("./public/img/uploaded_pictures/", filename)
+    db_path = File.join("/img/uploaded_pictures/", filename)
+    FileUtils.cp(params[:file][:tempfile], "./public/img/uploaded_pictures/#{filename}")
+    update_ad_picture(db_path, id)
+    redirect('/users/profile')
+end
+
+post('/ads/:id/delete') do
+    id = params[:ad_id].to_i
+    delete_ad(id)
+    redirect('/users/profile')
 end

@@ -1,20 +1,11 @@
-body
-    header class="header"
-        h1 Köp&Sälj
-        a class="login_link" href="/login" Log in
-        a class="register_link" href="/register" Sign up
-        a class="create_ad_link" href="/ads/new" Create ad
 
-    a href="/img/uploaded_pictures/bil.jpg"
-
-
-    section
-        -advertisements.each do |ad|
-            article class="ad"
-                p class="ad_name" = ad["name"] 
-                p class="ad_desc" = ad["description"] 
-                p class="ad_price" = ad["price"] 
-                img src="#{ad["img_path"]}" alt="Image not found" class="picture"
+section class="ad_section"
+    -advertisements.each do |ad|
+        article class="ad"
+            p class="ad_name" = ad["name"] 
+            p class="ad_desc" = ad["description"] 
+            p class="ad_price" = ad["price"] 
+            img src="#{ad["img_path"]}" alt="Image not found" class="picture"
 
 
 
