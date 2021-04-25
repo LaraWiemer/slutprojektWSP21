@@ -3,8 +3,13 @@ h3 Ändra information
 form action="/ads/#{advertisements['ad_id'].to_i}/update" method="post"
     input type="text" name="ad_name" value="#{advertisements['name']}"
     input type="text" name="description" value="#{advertisements['description']}"
+    select name="category"
+        -categories.each do |category|
+            -if category_id["category_id"] == category["category_id"]
+                option value="#{category["category_id"]}" selected="selected" #{category['name']} 
+            -else
+                option value="#{category["category_id"]}" #{category['name']}
     input type="text" name="price" value="#{advertisements['price']}"
-    input type="hidden" name="old_img_path" value="#{advertisements['img_path']}"
     input type="hidden" name="ad_id" value="#{advertisements['ad_id']}"
     input type="submit" value="Ändra"
 

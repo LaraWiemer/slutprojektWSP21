@@ -8,7 +8,7 @@ html lang="en"
         title Köp&Sälj
     body
         header class="header"
-            h1 class="logotype" Köp&Sälj
+            a class="logotype" href="/" Köp&Sälj
             -if session[:user_id] != nil
                 a class="create_ad_link" href="/ads/new" Skapa annons
                 a class="profile_link" href="/users/profile"
@@ -16,6 +16,8 @@ html lang="en"
                 a class="logout_link" href="/users/logout" Logga ut
             -else
                 a class="login_link" href="/login" Logga in
-                a class="register_link" href="/register" Registrera
+                a class="register_link" href="/users/new" Registrera
+            -if session[:group_id] == 2
+                a class="admin_link" href="/users/edit" Hantera Användare
 
         ==yield

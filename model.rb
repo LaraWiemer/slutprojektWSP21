@@ -2,21 +2,85 @@
 
 
 
-def add_ad(ad_name, description, db_path, price, user_id)
-    
+def add_ad(ad_name, description, db_path, price, category_id, user_id) 
   if price.include?("kr") == false
     price = price + " kr"
   end
   db = SQLite3::Database.new('db/handel.db')
   db.results_as_hash = true
-  db.execute("INSERT INTO advertisements(name, description, img_path, price, user_id) VALUES (?, ?, ?, ?, ?)", ad_name, description, db_path, price, user_id)
+  db.execute("INSERT INTO advertisements(name, description, img_path, price) VALUES (?, ?, ?, ?)", ad_name, description, db_path, price)
+  ad_id_hash = db.execute("SELECT ad_id FROM advertisements WHERE name = ? AND img_path = ?", ad_name, db_path).first
+  ad_id = ad_id_hash["ad_id"].to_i
+  db.execute("INSERT INTO ad_to_user(user_id, ad_id) VALUES (?, ?)", user_id, ad_id)
+  db.execute("INSERT INTO ad_to_category(ad_id, category_id) VALUES (?, ?)", ad_id, category_id)
 end
 
-def register_user(username, password, phone_number)
-  pwdigest = BCrypt::Password.create(password)
+def ads_by_user(user_id)
   db = SQLite3::Database.new('db/handel.db')
-  db.execute("INSERT INTO users(username, pwdigest, phone_number) VALUES (?, ?, ?)", username, pwdigest, phone_number)
+  db.results_as_hash = true
+  result = db.execute("SELECT ad_id FROM ad_to_user WHERE user_id = ?",user_id)
+  ads_by_user = result.map do |el|
+    db.execute("SELECT * FROM advertisements WHERE ad_id = ?", el["ad_id"]).first
+  end
+  return ads_by_user
 end
+
+def ad_categories()
+
+end
+
+def get_db_path(id) 
+  db = SQLite3::Database.new('db/handel.db')
+  db.results_as_hash = true
+  result = db.execute("SELECT img_path FROM advertisements WHERE ad_id = ?", id)
+end
+
+def update_ad(ad_name, description, price, category_id, ad_id)
+  if price.include?("kr") == false
+    price = price + " kr"
+  end
+  db = SQLite3::Database.new('db/handel.db')
+  db.results_as_hash = true
+  db.execute("UPDATE advertisements SET name = ?, description = ?, price = ? WHERE ad_id = ?", ad_name, description, price, ad_id)
+  db.execute("UPDATE ad_to_category SET category_id = ? WHERE ad_id = ?", category_id, ad_id)
+end
+
+def update_ad_picture(db_path, ad_id)
+  db = SQLite3::Database.new('db/handel.db')
+  db.results_as_hash = true
+  db.execute("UPDATE advertisements SET img_path = ? WHERE ad_id = ?", db_path, ad_id)
+end
+
+def delete_ad(ad_id)
+  db = SQLite3::Database.new('db/handel.db')
+  db.results_as_hash = true
+  db.execute("DELETE FROM advertisements WHERE ad_id = ?", ad_id)
+  db.execute("DELETE FROM ad_to_user WHERE ad_id = ?", ad_id)
+  db.execute("DELETE FROM ad_to_category WHERE ad_id = ?", ad_id)
+end
+
+def ad_content(ad_id)
+  db = SQLite3::Database.new('db/handel.db')
+  db.results_as_hash = true
+  ad_content = db.execute("SELECT * FROM advertisements WHERE ad_id = ?", ad_id).first
+  return ad_content
+end
+
+def ad_to_category(ad_id)
+  db = SQLite3::Database.new('db/handel.db')
+  db.results_as_hash = true
+  category_id = db.execute("SELECT * FROM ad_to_category WHERE ad_id = ?", ad_id).first
+  return category_id
+end
+
+def get_categories()
+  db = SQLite3::Database.new('db/handel.db')
+  db.results_as_hash = true
+  return db.execute("SELECT * FROM categories")
+end
+
+
+
 
 def search_file_ending(original_filename)
   array = original_filename.split(".")
@@ -24,19 +88,49 @@ def search_file_ending(original_filename)
   return result
 end
 
+
+
+
+
+
+
+
+def register_user(username, password, phone_number)
+  pwdigest = BCrypt::Password.create(password)
+  db = SQLite3::Database.new('db/handel.db')
+  db.results_as_hash
+  db.execute("INSERT INTO users(username, pwdigest, phone_number) VALUES (?, ?, ?)", username, pwdigest, phone_number)
+  result = db.execute("SELECT user_id FROM users WHERE username = ? AND pwdigest = ?", username, pwdigest).first.first
+  user_id = result
+  group_id = 1
+  db.execute("INSERT INTO user_to_group(user_id, group_id) VALUES (?, ?)", user_id, group_id)
+  session[:user_id] = user_id
+  session[:group_id] = group_id
+end
+
+# def get_group_id(username, phone_number)
+#   db = SQLite3::Database.new('db/handel.db')
+#   db.results_as_hash = true
+#   result = db.execute("SELECT group_id FROM user_to_group WHERE username = ? AND phone_number = ?", username, phone_number)
+# end
+
+
+
 def login(username, password)
   db = SQLite3::Database.new('db/handel.db')
   db.results_as_hash = true
   result = db.execute("SELECT * FROM users WHERE username = ?", username).first
   pwdigest = result["pwdigest"]
-  id = result["user_id"]
+  user_id = result["user_id"]
+  group_id_hash = db.execute("SELECT group_id FROM user_to_group WHERE user_id = ?", user_id).first
+  group_id = group_id_hash["group_id"]
   if BCrypt::Password.new(pwdigest) == password
-    session[:user_id] = id
+    session[:user_id] = user_id
+    session[:group_id] = group_id
     return true
   else
     return false
   end
-
 end
 
 def locate_user_id(username)
@@ -46,53 +140,42 @@ def locate_user_id(username)
   session[:user_id] = id
 end
 
-def ads_by_user(user_id)
+
+
+# def get_user_preferences(user_id)
+#   db = SQLite3::Database.new('db/handel.db')
+#   db.results_as_hash = true
+#   result = db.execute("SELECT category_id FROM users_categories WHERE user_id = ?",user_id)
+#   user_preferences = result.map do |el|
+#     db.execute("SELECT * FROM categories WHERE category_id = ?", el["category_id"]).first
+#   end
+#   return user_preferences
+# end
+
+def get_categories()
   db = SQLite3::Database.new('db/handel.db')
   db.results_as_hash = true
-  result = db.execute("SELECT * FROM advertisements WHERE user_id = ?", user_id)
-  return result
+  result = db.execute("SELECT * FROM categories")
 end
 
-def get_db_path(id) 
-  db = SQLite3::Database.new('db/handel.db')
-  db.results_as_hash = true
-  result = db.execute("SELECT img_path FROM advertisements WHERE ad_id = ?", id)
-end
-
-def update_ad(ad_name, description, price, ad_id)
-  price = price + " kr"
-  db = SQLite3::Database.new('db/handel.db')
-  db.results_as_hash = true
-  db.execute("UPDATE advertisements SET name = ?, description = ?, price = ? WHERE ad_id = ?", ad_name, description, price, ad_id)
-end
-
-def update_ad_picture(db_path, ad_id)
-  db = SQLite3::Database.new('db/handel.db')
-  db.results_as_hash = true
-  db.execute("UPDATE advertisements SET img_path = ? WHERE ad_id = ?", db_path, ad_id)
-end
-
-def delete_ad(id)
-  db = SQLite3::Database.new('db/handel.db')
-  db.results_as_hash = true
-  db.execute("DELETE FROM advertisements WHERE ad_id = ?", id)
-end
-
-def ad_content(ad_id)
-  db = SQLite3::Database.new('db/handel.db')
-  db.results_as_hash = true
-  result = db.execute("SELECT * FROM advertisements WHERE ad_id = ?", ad_id)
-end
-
-
-
-def get_user_prefrences(user_id)
-  db = SQLite3::Database.new("db/handel.db")
-  db.results_as_hash = true
-  user_topic_id = db.execute("SELECT topic_id FROM users_topics WHERE user_id = ?",user_id)
-  user_preferences = user_topic_id.map do |el|
-    db.execute("SELECT topic FROM preferences WHERE topic_id = ?",el["topic_id"]).first
+def login_check()
+  if session[:user_id] != nil
+    return true
+  else
+    return false
   end
-  return user_preferences
 end
+
+def get_user_content()
+  db = SQLite3::Database.new('db/handel.db')
+  db.results_as_hash = true
+  return db.execute("SELECT * FROM users")
+end
+
+def get_user_to_group()
+  db = SQLite3::Database.new('db/handel.db')
+  db.results_as_hash = true
+  return db.execute("SELECT * FROM user_to_group")
+end
+
 

@@ -1,8 +1,15 @@
 
-h2 Ämnen
+/ h2 Ämnen
+/ -category_preferences.each do |category|
+/     p = category['name']
+/     form class="edit_preferences" action="/preferences/edit"
+/         input type="hidden" name="category" value="#{category['category_id']}"
+/         input type="submit" value="Ändra"
+/     form class="edit_preferences" action="/preferences/edit"
+/         input type="hidden" name="category" value="#{category['category_id']}"
+/         input type="submit" value="Lägg till"
 
-
-h2 Dina annonser
+/ h2 Dina annonser
 
 section class="ad_section"
     -advertisements.each do |ad|

@@ -1,0 +1,23 @@
+-users.each do
+    p = users["username"]
+
+
+    form action="/users/#{users['user_id'].to_i}/delete" action="post"
+        input type="hidden" name="user_id" value="#{users["user_id"]}"
+        input type="submit" Ta bort
+
+
+
+
+/ form action="/ads/#{advertisements['ad_id'].to_i}/update" method="post"
+/     input type="text" name="ad_name" value="#{advertisements['name']}"
+/     input type="text" name="description" value="#{advertisements['description']}"
+/     select name="category"
+/         -categories.each do |category|
+/             -if category_id["category_id"] == category["category_id"]
+/                 option value="#{category["category_id"]}" selected="selected" #{category['name']} 
+/             -else
+/                 option value="#{category["category_id"]}" #{category['name']}
+/     input type="text" name="price" value="#{advertisements['price']}"
+/     input type="hidden" name="ad_id" value="#{advertisements['ad_id']}"
+/     input type="submit" value="Ändra"

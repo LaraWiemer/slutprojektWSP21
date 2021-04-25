@@ -2,6 +2,12 @@
 form action="/ads/new" method="post" enctype="multipart/form-data"
     input type="text" name="ad_name" placeholder="Rubrik"
     input type="text" name="description" placeholder="Beskrivning"
+    select name="category"
+        -categories.each do |category|
+            -if category["category_id"] == 1 
+                option value="#{category["category_id"]}" selected="selected" #{category['name']}             
+            -else
+                option value="#{category["category_id"]}" #{category['name']}
     input type="file" name="file"
     input type="text" name="price" placeholder="Pris"
     input type="submit" value="Skapa annons"
