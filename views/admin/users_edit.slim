@@ -1,13 +1,11 @@
--users.each do
-    p = users["username"]
+-users.each do |user|
+    p = user["username"]
 
+    form action="/users/#{user['user_id'].to_i}/delete" method="post"
+        input type="hidden" name="user_id" value="#{user["user_id"]}"
+        input type="submit" value="Ta bort"
 
-    form action="/users/#{users['user_id'].to_i}/delete" action="post"
-        input type="hidden" name="user_id" value="#{users["user_id"]}"
-        input type="submit" Ta bort
-
-
-
+ 
 
 / form action="/ads/#{advertisements['ad_id'].to_i}/update" method="post"
 /     input type="text" name="ad_name" value="#{advertisements['name']}"

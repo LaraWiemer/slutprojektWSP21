@@ -18,6 +18,7 @@ html lang="en"
                 a class="login_link" href="/login" Logga in
                 a class="register_link" href="/users/new" Registrera
             -if session[:group_id] == 2
-                a class="admin_link" href="/users/edit" Hantera Användare
+                form class="admin_link" action="/users/edit" methos="post"
+                    input type="submit" value="Hantera Användare"
 
         ==yield
