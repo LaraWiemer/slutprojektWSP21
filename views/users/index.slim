@@ -18,7 +18,7 @@ section class="ad_section"
             p class="ad_desc" = ad["description"] 
             p class="ad_price" = ad["price"] 
             img src="#{ad["img_path"]}" alt="Image not found" class="picture"
-            form class="ad_edit_link" action="/ads/edit" method="get"
+            form class="ad_edit_link" action="/ads/:id/edit" method="get"
                 input type="hidden" name="ad_id" value="#{ad['ad_id']}"
                 input type="submit" value="Ändra"
             form class="ad_delete_form" action="/ads/#{ad["ad_id"]}/delete" method="post"

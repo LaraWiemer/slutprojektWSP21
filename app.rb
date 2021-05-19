@@ -10,7 +10,12 @@ require 'securerandom'
 
 include Model
 
-before all_of("/ads/new", "/ads/edit", "/ads/:id/update", "/ads/:id/delete", "/ads/:id/update", "/ads/:id/update_picture", "/users/profile") do
+
+#Checks if the user is logged in, when there is an ad_id it checks if the ad belongs to the user. If the ad does not belong to the user they get redirected to /error, otherwise they go on to the wanted route
+#@param [String] :ad_id, the id of the ad in question
+#@see Model#
+
+before all_of("/ads", "/ads/new", "/ads/:id/edit", "/ads/:id/update", "/ads/:id/delete", "/ads/:id/update", "/ads/:id/update_picture", "/users/:id") do
     ad_id = params[:ad_id]
     if session[:user_id] == nil
         redirect("/error")
@@ -23,14 +28,16 @@ before all_of("/ads/new", "/ads/edit", "/ads/:id/update", "/ads/:id/delete", "/a
     end
 end
 
-before all_of("/login", "/register") do
-    if session[:sleep] == true
-        redirect("/")
+
+#Checks if the user is an admin before they can access certain routes, if they are not they are redirected to /error
+
+before all_of("/admin/", "/admin/:id/edit", "/admin") do
+    if session[:group_id] != 2
+        redirect("/error")
     end
 end
 
-
-#Visa startsidan
+#Displays the home-page
 #@see Model#get_ads
 
 get('/') do 
@@ -39,7 +46,7 @@ get('/') do
 end
 
 
-#Shows the form that allows the user to create an ad
+#Displays the form that allows the user to create an ad
 #@see Model#get_categories
 
 get('/ads/new') do
@@ -55,9 +62,10 @@ end
 #@param [string] :price, the price of the advertisement
 #@param [string] :file, the image file of the advertisement
 #@param [string] :filename, the image files name of the advertisement
+#@see Model#search_file_ending
 #@see Model#add_ad
 
-post("/ads/new") do
+post("/ads") do 
     ad_name = params[:ad_name]
     description = params[:description]
     category_id = params[:category]
@@ -74,13 +82,13 @@ post("/ads/new") do
 end
 
 
-#Views the form that can be used to edit an ad
-#@param [string] :ad_id, the id of the ad being edited
+#Displays the form that can be used to edit an ad
+#@param [Integer] :ad_id, the id of the ad being edited
 #@see Model#ad_content
 #@see Model#ad_to_category
 #@see Model#get_categories
 
-get("/ads/edit") do
+get("/ads/:id/edit") do
     ad_id = params[:ad_id].to_i
     user_id = session[:user_id].to_i
     ad_content = ad_content(ad_id)
@@ -90,8 +98,8 @@ get("/ads/edit") do
 end
 
 
-#Updates the chosen ad and redirects to /users/profile
-#@param [string] :id, the id of the ad being updated
+#Updates the chosen ad and redirects to /users/:id
+#@param [Integer] :id, the id of the ad being updated
 #@param [string] :ad_name, the new name of the ad being updated
 #@param [string] :description, the new description of the ad being updated
 #@param [string] :category_id, the id of the new category of the ad being updated
@@ -106,12 +114,12 @@ post("/ads/:id/update") do
     price = params[:price]
     user_id = session[:user_id].to_i
     update_ad(ad_name, description, price, category_id, id)
-    redirect("/users/profile")
+    redirect("/users/:id")
 end
 
 
-#Updates the image of the selected ad and redirects to /users/profile
-#@param [string] :ad_id, the id of the ad being updated
+#Updates the image of the selected ad and redirects to /users/:id
+#@param [Integer] :ad_id, the id of the ad being updated
 #@param [string] :file, the new image file of the ad being updated
 #@param [string] :filename, the new name of the image of the ad being updated
 #@see Model#search_file_ending
@@ -126,37 +134,37 @@ post("/ads/:id/update_picture") do
     db_path = File.join("/img/uploaded_pictures/", filename)
     FileUtils.cp(params[:file][:tempfile], "./public/img/uploaded_pictures/#{filename}")
     update_ad_picture(db_path, id)
-    redirect('/users/profile')
+    redirect('/users/:id')
 end
 
 
-#Deletes the selected ad and redirects to /users/profile
-#@param [string] :id, the id of the ad being deleted
+#Deletes the selected ad and redirects to /users/:id
+#@param [Integer] :id, the id of the ad being deleted
 #@see Model#delete_ad
 
 post('/ads/:id/delete') do
     id = params[:ad_id].to_i
     user_id = session[:user_id]
     delete_ad(id)
-    redirect('/users/profile')
+    redirect('/users/:id')
 end
 
 
-#Shows the form that creates a new user
+#Displays the form that creates a new user
 
 get("/users/new") do
     slim(:"/users/create")
 end
 
 
-#Creates a new user and redirects to / if successful, if the password and the confirmed password do not match the route redirects to /register_error
+#Creates a new user and redirects to / if successful, if the password and the confirmed password do not match the route redirects to /error/register
 #@param [string] :username, the username of the user being created
 #@param [string] :password, the password of the user being created
 #@param [string] :password_confirm, the confirmation of the password of the user being created
 #@param [string] :phone_number, the phone number of the user being created
 #@see Model#register_user
 
-post("/users/new") do
+post("/users") do
     username = params[:username]
     password = params[:password]
     password_confirm = params[:password_confirm]
@@ -167,7 +175,7 @@ post("/users/new") do
         session[:group_id] = array[1]
         redirect("/")
     else
-        redirect("/register_error")
+        redirect("/error/register")
     end
 end
 
@@ -181,17 +189,57 @@ get("/users/logout") do
 end
 
 
+#Deletes a user, can only be accessed if you are the user being deleted or if you are an admin
+#@param [Integer] :user_id, the id of the user being deleted
+#@see Model#delete_user
+
+
+post("/users/:id/delete") do
+    user_id = params[:user_id].to_i
+    if session[:user_id] == user_id || session[:group_id] == 2
+        delete_user(user_id)
+    end
+    if session[:group_id] == 2
+        redirect("/admin/")
+    else
+        redirect("/")
+    end
+end
+
+
 #Shows a list of all the users and allows to delete the users, can only be accessed by admins
 #@see Model#get_user_content
 #@see Model#get_user_to_group
 
-get("/admin/edit") do
-    if session[:group_id] != 2
-        redirect("/")
-    end
-    users = get_user_content()
+get("/admin/") do
+    users = get_all_user_content()
     user_to_group = get_user_to_group()
-    slim(:"/admin/users_edit", locals:{users:users, user_to_group:user_to_group})
+    slim(:"/admin/index", locals:{users:users, user_to_group:user_to_group})
+end
+
+
+#Displays the form that lets admins edit a users access clearance
+#@param [Integer] :user_id, the users id
+
+get("/admin/:id/edit") do
+    id = params[:user_id].to_i
+    user_content = get_user_content(id)
+    user_group = get_one_user_to_group(id)
+    group_content = get_groups()
+    slim(:"/admin/edit", locals:{users:user_content, user_group:user_group, groups:group_content})
+end
+
+
+#Updates a users access clearance
+#@param [String] :user_id, the id of the user being updated
+#@param [String] :group, the id of the new group
+#@see Model#admin_update_useraccess
+
+post("/admin/:id/update") do
+    user_id = params[:user_id]
+    group_id = params[:group]
+    admin_update_useraccess(user_id, group_id)
+    redirect("/admin/")
 end
 
 
@@ -199,14 +247,14 @@ end
 #@param [string] :user_id, the id of the user whose profile is being shown
 #@see Model#ads_by_user
 
-get("/users/profile") do
-    user_id = session[:user_id].to_i
-    ads_by_user = ads_by_user(user_id)
-    slim(:"/users/profile", locals:{advertisements:ads_by_user})
+get("/users/:id") do
+    id = session[:user_id].to_i
+    ads_by_user = ads_by_user(id)
+    slim(:"/users/index", locals:{advertisements:ads_by_user})
 end
 
 
-#Shows the form that allows a user to log in
+#Displays the form that allows a user to log in
 
 get("/login") do
     slim(:login)
@@ -232,7 +280,7 @@ post('/login') do
         redirect('/')
     else
         session[:login_tries] += 1
-        redirect('/error-- /login_error')
+        redirect('/error/login')
     end
     if session[:login_tries] > 3
         redirect("/error/too_many_login_tries")
@@ -240,26 +288,24 @@ post('/login') do
 end
 
 
-#
-
-get("/error/too_many_login_tries") do
-    session[:sleep] = true
-    sleep(30)
-    session[:sleep] = false
-    redirect("/login")
-end
+#Displays the error page that is shown when a user tries to access a page that they do not have access to
 
 get('/error') do
-  slim(:"/error/error")  
+  slim(:"/error/not_logged_in")  
 end
 
-get("/error/login_error") do
+
+#Displays the error page for when a login attempt has failed
+
+get("/error/login") do
     slim(:"/error/login")
 end
 
-get("/register_error") do
+
+#Displays the error page for when a user has failed in attempting to register as a user
+
+get("/error/register") do
     slim(:"/error/register")
 end
-
 
 

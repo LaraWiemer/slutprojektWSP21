@@ -1,12 +1,17 @@
--users.each do |user|
-    p = user["username"]
+h3 Ändra behörighet 
+form action="/admin/#{users["user_id"].to_i}/update" method="post"
+    input type="hidden" name="user_id" value="#{users["user_id"]}"
+    input type="text" name="username" value="#{users["username"]}"
+    select name="group"
+        -groups.each do |group|
+            -if user_group["group_id"] == group["group_id"]
+                option value="#{group["group_id"]}" selected="selected" #{group['group_name']} 
+            -else
+                option value="#{group["group_id"]}" #{group['group_name']}
+    input type="submit" value="Ändra"
 
-    form action="/users/#{user['user_id'].to_i}/delete" method="post"
-        input type="hidden" name="user_id" value="#{user["user_id"]}"
-        input type="submit" value="Ta bort"
 
- 
-
+/ h3 Ändra information
 / form action="/ads/#{advertisements['ad_id'].to_i}/update" method="post"
 /     input type="text" name="ad_name" value="#{advertisements['name']}"
 /     input type="text" name="description" value="#{advertisements['description']}"

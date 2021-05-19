@@ -11,14 +11,14 @@ html lang="en"
             a class="logotype" href="/" Köp&Sälj
             -if session[:user_id] != nil
                 a class="create_ad_link" href="/ads/new" Skapa annons
-                a class="profile_link" href="/users/profile"
+                a class="profile_link" href="/users/:id"
                     img class="profile_link_img" src="/img/system_icons/account_circle_black_24dp.svg"
                 a class="logout_link" href="/users/logout" Logga ut
             -else
                 a class="login_link" href="/login" Logga in
                 a class="register_link" href="/users/new" Registrera
             -if session[:group_id] == 2
-                form class="admin_link" action="/users/edit" methos="post"
+                form class="admin_link" action="/admin/" methos="post"
                     input type="submit" value="Hantera Användare"
 
         ==yield

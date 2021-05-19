@@ -118,7 +118,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Visa startsidan.</p>
+<p>Displays the home-page.</p>
 </div></span>
   
 </li>
@@ -127,7 +127,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="top-level-namespace.html#GET__ads_edit-instance_method" title="#GET /ads/edit (instance method)">#<strong>GET /ads/edit</strong>  &#x21d2; Object </a>
+      <a href="top-level-namespace.html#GET__admin_-instance_method" title="#GET /admin/ (instance method)">#<strong>GET /admin/</strong>  &#x21d2; Object </a>
     
 
     
@@ -142,7 +142,55 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Views the form that can be used to edit an ad.</p>
+<p>Shows a list of all the users and allows to delete the users, can only be accessed by admins.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#GET__admin__id_edit-instance_method" title="#GET /admin/:id/edit (instance method)">#<strong>GET /admin/:id/edit</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Displays the form that lets admins edit a users access clearance.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#GET__ads__id_edit-instance_method" title="#GET /ads/:id/edit (instance method)">#<strong>GET /ads/:id/edit</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Displays the form that can be used to edit an ad.</p>
 </div></span>
   
 </li>
@@ -166,7 +214,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Shows the form that allows the user to create an ad.</p>
+<p>Displays the form that allows the user to create an ad.</p>
 </div></span>
   
 </li>
@@ -189,7 +237,57 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Displays the error page that is shown when a user tries to access a page that they do not have access to.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#GET__error_login-instance_method" title="#GET /error/login (instance method)">#<strong>GET /error/login</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Displays the error page for when a login attempt has failed.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#GET__error_register-instance_method" title="#GET /error/register (instance method)">#<strong>GET /error/register</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Displays the error page for when a user has failed in attempting to register as a user.</p>
+</div></span>
   
 </li>
 
@@ -212,7 +310,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Shows the form that allows a user to log in.</p>
+<p>Displays the form that allows a user to log in.</p>
 </div></span>
   
 </li>
@@ -221,73 +319,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="top-level-namespace.html#GET__login_error-instance_method" title="#GET /login_error (instance method)">#<strong>GET /login_error</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="top-level-namespace.html#GET__register_error-instance_method" title="#GET /register_error (instance method)">#<strong>GET /register_error</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="top-level-namespace.html#GET__too_many_login_tries-instance_method" title="#GET /too_many_login_tries (instance method)">#<strong>GET /too_many_login_tries</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'></div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="top-level-namespace.html#GET__users_edit-instance_method" title="#GET /users/edit (instance method)">#<strong>GET /users/edit</strong>  &#x21d2; Object </a>
+      <a href="top-level-namespace.html#GET__users__id-instance_method" title="#GET /users/:id (instance method)">#<strong>GET /users/:id</strong>  &#x21d2; Object </a>
     
 
     
@@ -302,7 +334,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Shows a list of all the users and allows to delete the users, can currently only be accessed by admins but in the future users will be able to edit their own profile.</p>
+<p>Shows a users profile.</p>
 </div></span>
   
 </li>
@@ -350,7 +382,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Shows the form that creates a new user.</p>
+<p>Displays the form that creates a new user.</p>
 </div></span>
   
 </li>
@@ -359,7 +391,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="top-level-namespace.html#GET__users_profile-instance_method" title="#GET /users/profile (instance method)">#<strong>GET /users/profile</strong>  &#x21d2; Object </a>
+      <a href="top-level-namespace.html#POST__admin__id_update-instance_method" title="#POST /admin/:id/update (instance method)">#<strong>POST /admin/:id/update</strong>  &#x21d2; Object </a>
     
 
     
@@ -374,7 +406,31 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Shows a users profile.</p>
+<p>Updates a users access clearance.</p>
+</div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#POST__ads-instance_method" title="#POST /ads (instance method)">#<strong>POST /ads</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'>
+<p>Creates a new ad and redirects to /.</p>
 </div></span>
   
 </li>
@@ -398,7 +454,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Deletes the selected ad and redirects to /users/profile.</p>
+<p>Deletes the selected ad and redirects to /users/:id.</p>
 </div></span>
   
 </li>
@@ -422,7 +478,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Updates the chosen ad and redirects to /users/profile.</p>
+<p>Updates the chosen ad and redirects to /users/:id.</p>
 </div></span>
   
 </li>
@@ -446,31 +502,7 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Updates the image of the selected ad and redirects to /users/profile.</p>
-</div></span>
-  
-</li>
-
-      
-        <li class="public ">
-  <span class="summary_signature">
-    
-      <a href="top-level-namespace.html#POST__ads_new-instance_method" title="#POST /ads/new (instance method)">#<strong>POST /ads/new</strong>  &#x21d2; Object </a>
-    
-
-    
-  </span>
-  
-  
-  
-  
-  
-  
-  
-
-  
-    <span class="summary_desc"><div class='inline'>
-<p>Creates a new ad and redirects to /.</p>
+<p>Updates the image of the selected ad and redirects to /users/:id.</p>
 </div></span>
   
 </li>
@@ -503,7 +535,7 @@
         <li class="public ">
   <span class="summary_signature">
     
-      <a href="top-level-namespace.html#POST__users_new-instance_method" title="#POST /users/new (instance method)">#<strong>POST /users/new</strong>  &#x21d2; Object </a>
+      <a href="top-level-namespace.html#POST__users-instance_method" title="#POST /users (instance method)">#<strong>POST /users</strong>  &#x21d2; Object </a>
     
 
     
@@ -518,8 +550,30 @@
 
   
     <span class="summary_desc"><div class='inline'>
-<p>Creates a new user and redirects to / if successful, if the password and the confirmed password do not match the route redirects to /register_error.</p>
+<p>Creates a new user and redirects to / if successful, if the password and the confirmed password do not match the route redirects to /error/register.</p>
 </div></span>
+  
+</li>
+
+      
+        <li class="public ">
+  <span class="summary_signature">
+    
+      <a href="top-level-namespace.html#POST__users__id_delete-instance_method" title="#POST /users/:id/delete (instance method)">#<strong>POST /users/:id/delete</strong>  &#x21d2; Object </a>
+    
+
+    
+  </span>
+  
+  
+  
+  
+  
+  
+  
+
+  
+    <span class="summary_desc"><div class='inline'></div></span>
   
 </li>
 
@@ -546,7 +600,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Visa startsidan</p>
+<p>Displays the home-page</p>
 
 
   </div>
@@ -569,13 +623,13 @@
       <pre class="lines">
 
 
-36
-37
-38
-39</pre>
+43
+44
+45
+46</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 36</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 43</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> 
     <span class='id identifier rubyid_advertisements'>advertisements</span> <span class='op'>=</span> <span class='id identifier rubyid_get_ads'>get_ads</span><span class='lparen'>(</span><span class='rparen'>)</span>
@@ -587,9 +641,9 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="GET__ads_edit-instance_method">
+  <h3 class="signature " id="GET__admin_-instance_method">
   
-    #<strong>GET /ads/edit</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>GET /admin/</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -598,7 +652,134 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Views the form that can be used to edit an ad</p>
+<p>Shows a list of all the users and allows to delete the users, can only be accessed by admins</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>Model#get_user_content</li>
+    
+      <li>Model#get_user_to_group</li>
+    
+  </ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+214
+215
+216
+217
+218</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 214</span>
+
+<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/admin/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_users'>users</span> <span class='op'>=</span> <span class='id identifier rubyid_get_all_user_content'>get_all_user_content</span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_user_to_group'>user_to_group</span> <span class='op'>=</span> <span class='id identifier rubyid_get_user_to_group'>get_user_to_group</span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/admin/index&quot;</span><span class='comma'>,</span> <span class='label'>locals:</span><span class='lbrace'>{</span><span class='label'>users:</span><span class='id identifier rubyid_users'>users</span><span class='comma'>,</span> <span class='label'>user_to_group:</span><span class='id identifier rubyid_user_to_group'>user_to_group</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GET__admin__id_edit-instance_method">
+  
+    #<strong>GET /admin/:id/edit</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Displays the form that lets admins edit a users access clearance</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>:user_id,</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the users id</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+224
+225
+226
+227
+228
+229
+230</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 224</span>
+
+<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/admin/:id/edit</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+    <span class='id identifier rubyid_user_content'>user_content</span> <span class='op'>=</span> <span class='id identifier rubyid_get_user_content'>get_user_content</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_user_group'>user_group</span> <span class='op'>=</span> <span class='id identifier rubyid_get_one_user_to_group'>get_one_user_to_group</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_group_content'>group_content</span> <span class='op'>=</span> <span class='id identifier rubyid_get_groups'>get_groups</span><span class='lparen'>(</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/admin/edit&quot;</span><span class='comma'>,</span> <span class='label'>locals:</span><span class='lbrace'>{</span><span class='label'>users:</span><span class='id identifier rubyid_user_content'>user_content</span><span class='comma'>,</span> <span class='label'>user_group:</span><span class='id identifier rubyid_user_group'>user_group</span><span class='comma'>,</span> <span class='label'>groups:</span><span class='id identifier rubyid_group_content'>group_content</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GET__ads__id_edit-instance_method">
+  
+    #<strong>GET /ads/:id/edit</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Displays the form that can be used to edit an ad</p>
 
 
   </div>
@@ -612,7 +793,7 @@
         <span class='name'>:ad_id,</span>
       
       
-        <span class='type'>(<tt>string</tt>)</span>
+        <span class='type'>(<tt>Integer</tt>)</span>
       
       
       
@@ -645,19 +826,19 @@
       <pre class="lines">
 
 
-83
-84
-85
-86
-87
-88
-89
-90</pre>
+91
+92
+93
+94
+95
+96
+97
+98</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 83</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 91</span>
 
-<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/ads/edit</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/ads/:id/edit</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_ad_id'>ad_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:ad_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
     <span class='id identifier rubyid_user_id'>user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
     <span class='id identifier rubyid_ad_content'>ad_content</span> <span class='op'>=</span> <span class='id identifier rubyid_ad_content'>ad_content</span><span class='lparen'>(</span><span class='id identifier rubyid_ad_id'>ad_id</span><span class='rparen'>)</span>
@@ -682,7 +863,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Shows the form that allows the user to create an ad</p>
+<p>Displays the form that allows the user to create an ad</p>
 
 
   </div>
@@ -705,13 +886,13 @@
       <pre class="lines">
 
 
-45
-46
-47
-48</pre>
+52
+53
+54
+55</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 45</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 52</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/ads/new</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_categories'>categories</span> <span class='op'>=</span> <span class='id identifier rubyid_get_categories'>get_categories</span><span class='lparen'>(</span><span class='rparen'>)</span>
@@ -731,21 +912,120 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Displays the error page that is shown when a user tries to access a page that they do not have access to</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
-249
-250
-251</pre>
+293
+294
+295</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 249</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 293</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/error</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-  <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/error/error&quot;</span><span class='rparen'>)</span>  
+  <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/error/not_logged_in&quot;</span><span class='rparen'>)</span>  
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GET__error_login-instance_method">
+  
+    #<strong>GET /error/login</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Displays the error page for when a login attempt has failed</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+300
+301
+302</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 300</span>
+
+<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/error/login</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/error/login&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GET__error_register-instance_method">
+  
+    #<strong>GET /error/register</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Displays the error page for when a user has failed in attempting to register as a user</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+307
+308
+309</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 307</span>
+
+<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/error/register</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/error/register&quot;</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -764,7 +1044,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Shows the form that allows a user to log in</p>
+<p>Displays the form that allows a user to log in</p>
 
 
   </div>
@@ -780,12 +1060,12 @@
       <pre class="lines">
 
 
-211
-212
-213</pre>
+259
+260
+261</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 211</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 259</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/login</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:login</span><span class='rparen'>)</span>
@@ -796,257 +1076,9 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="GET__login_error-instance_method">
+  <h3 class="signature " id="GET__users__id-instance_method">
   
-    #<strong>GET /login_error</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-253
-254
-255</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 253</span>
-
-<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/login_error</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/error/login&quot;</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="GET__register_error-instance_method">
-  
-    #<strong>GET /register_error</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-257
-258
-259</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 257</span>
-
-<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/register_error</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/error/register&quot;</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="GET__too_many_login_tries-instance_method">
-  
-    #<strong>GET /too_many_login_tries</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-242
-243
-244
-245
-246
-247</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 242</span>
-
-<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/too_many_login_tries</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:sleep</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>true</span>
-    <span class='id identifier rubyid_sleep'>sleep</span><span class='lparen'>(</span><span class='int'>30</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:sleep</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>false</span>
-    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/login</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="GET__users_edit-instance_method">
-  
-    #<strong>GET /users/edit</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Shows a list of all the users and allows to delete the users, can currently only be accessed by admins but in the future users will be able to edit their own profile</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-  <p class="tag_title">See Also:</p>
-  <ul class="see">
-    
-      <li>Model#get_user_content</li>
-    
-      <li>Model#get_user_to_group</li>
-    
-  </ul>
-
-
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-188
-189
-190
-191
-192
-193
-194
-195</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 188</span>
-
-<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/users/edit</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='kw'>if</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:group_id</span><span class='rbracket'>]</span> <span class='op'>!=</span> <span class='int'>2</span>
-        <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-    <span class='kw'>end</span>
-    <span class='id identifier rubyid_users'>users</span> <span class='op'>=</span> <span class='id identifier rubyid_get_user_content'>get_user_content</span><span class='lparen'>(</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_user_to_group'>user_to_group</span> <span class='op'>=</span> <span class='id identifier rubyid_get_user_to_group'>get_user_to_group</span><span class='lparen'>(</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/admin/users_edit&quot;</span><span class='comma'>,</span> <span class='label'>locals:</span><span class='lbrace'>{</span><span class='label'>users:</span><span class='id identifier rubyid_users'>users</span><span class='comma'>,</span> <span class='label'>user_to_group:</span><span class='id identifier rubyid_user_to_group'>user_to_group</span><span class='rbrace'>}</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="GET__users_logout-instance_method">
-  
-    #<strong>GET /users/logout</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Logs out the user</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-177
-178
-179
-180
-181</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 177</span>
-
-<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/users/logout</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>nil</span>
-    <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:group_id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>nil</span>
-    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="GET__users_new-instance_method">
-  
-    #<strong>GET /users/new</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Shows the form that creates a new user</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  
-
-
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-147
-148
-149</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 147</span>
-
-<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/users/new</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/users/create&quot;</span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="GET__users_profile-instance_method">
-  
-    #<strong>GET /users/profile</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>GET /users/:id</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1098,19 +1130,19 @@
       <pre class="lines">
 
 
-202
-203
-204
-205
-206</pre>
+250
+251
+252
+253
+254</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 202</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 250</span>
 
-<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/users/profile</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_user_id'>user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
-    <span class='id identifier rubyid_ads_by_user'>ads_by_user</span> <span class='op'>=</span> <span class='id identifier rubyid_ads_by_user'>ads_by_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/users/profile&quot;</span><span class='comma'>,</span> <span class='label'>locals:</span><span class='lbrace'>{</span><span class='label'>advertisements:</span><span class='id identifier rubyid_ads_by_user'>ads_by_user</span><span class='rbrace'>}</span><span class='rparen'>)</span>
+<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/users/:id</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+    <span class='id identifier rubyid_ads_by_user'>ads_by_user</span> <span class='op'>=</span> <span class='id identifier rubyid_ads_by_user'>ads_by_user</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/users/index&quot;</span><span class='comma'>,</span> <span class='label'>locals:</span><span class='lbrace'>{</span><span class='label'>advertisements:</span><span class='id identifier rubyid_ads_by_user'>ads_by_user</span><span class='rbrace'>}</span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1118,9 +1150,9 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="POST__ads__id_delete-instance_method">
+  <h3 class="signature " id="GET__users_logout-instance_method">
   
-    #<strong>POST /ads/:id/delete</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>GET /users/logout</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1129,7 +1161,97 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Deletes the selected ad and redirects to /users/profile</p>
+<p>Logs out the user</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+185
+186
+187
+188
+189</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 185</span>
+
+<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/users/logout</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>nil</span>
+    <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:group_id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='kw'>nil</span>
+    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="GET__users_new-instance_method">
+  
+    #<strong>GET /users/new</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Displays the form that creates a new user</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+155
+156
+157</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 155</span>
+
+<span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/users/new</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/users/create&quot;</span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="POST__admin__id_update-instance_method">
+  
+    #<strong>POST /admin/:id/update</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Updates a users access clearance</p>
 
 
   </div>
@@ -1140,16 +1262,32 @@
   
     <li>
       
-        <span class='name'>:id,</span>
+        <span class='name'>:user_id,</span>
       
       
-        <span class='type'>(<tt>string</tt>)</span>
+        <span class='type'>(<tt>String</tt>)</span>
       
       
       
         &mdash;
         <div class='inline'>
-<p>the id of the ad being deleted</p>
+<p>the id of the user being updated</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:group,</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the id of the new group</p>
 </div>
       
     </li>
@@ -1160,7 +1298,7 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
-      <li>Model#delete_ad</li>
+      <li>Model#admin_update_useraccess</li>
     
   </ul>
 
@@ -1172,21 +1310,21 @@
       <pre class="lines">
 
 
-137
-138
-139
-140
-141
-142</pre>
+238
+239
+240
+241
+242
+243</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 137</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 238</span>
 
-<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/ads/:id/delete</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:ad_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
-    <span class='id identifier rubyid_user_id'>user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span>
-    <span class='id identifier rubyid_delete_ad'>delete_ad</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/users/profile</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/admin/:id/update</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_user_id'>user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_group_id'>group_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:group</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_admin_update_useraccess'>admin_update_useraccess</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='comma'>,</span> <span class='id identifier rubyid_group_id'>group_id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/admin/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1194,277 +1332,9 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="POST__ads__id_update-instance_method">
+  <h3 class="signature " id="POST__ads-instance_method">
   
-    #<strong>POST /ads/:id/update</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Updates the chosen ad and redirects to /users/profile</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>:id,</span>
-      
-      
-        <span class='type'>(<tt>string</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the id of the ad being updated</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>:ad_name,</span>
-      
-      
-        <span class='type'>(<tt>string</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the new name of the ad being updated</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>:description,</span>
-      
-      
-        <span class='type'>(<tt>string</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the new description of the ad being updated</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>:category_id,</span>
-      
-      
-        <span class='type'>(<tt>string</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the id of the new category of the ad being updated</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>:price,</span>
-      
-      
-        <span class='type'>(<tt>string</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the new price of the ad being updated</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-
-  <p class="tag_title">See Also:</p>
-  <ul class="see">
-    
-      <li>Model#update_ad</li>
-    
-  </ul>
-
-
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-101
-102
-103
-104
-105
-106
-107
-108
-109
-110</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 101</span>
-
-<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/ads/:id/update</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
-    <span class='id identifier rubyid_ad_name'>ad_name</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:ad_name</span><span class='rbracket'>]</span>
-    <span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:description</span><span class='rbracket'>]</span>
-    <span class='id identifier rubyid_category_id'>category_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:category</span><span class='rbracket'>]</span>
-    <span class='id identifier rubyid_price'>price</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:price</span><span class='rbracket'>]</span>
-    <span class='id identifier rubyid_user_id'>user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
-    <span class='id identifier rubyid_update_ad'>update_ad</span><span class='lparen'>(</span><span class='id identifier rubyid_ad_name'>ad_name</span><span class='comma'>,</span> <span class='id identifier rubyid_description'>description</span><span class='comma'>,</span> <span class='id identifier rubyid_price'>price</span><span class='comma'>,</span> <span class='id identifier rubyid_category_id'>category_id</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/users/profile</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="POST__ads__id_update_picture-instance_method">
-  
-    #<strong>POST /ads/:id/update_picture</strong>  &#x21d2; <tt>Object</tt> 
-  
-
-  
-
-  
-</h3><div class="docstring">
-  <div class="discussion">
-    
-<p>Updates the image of the selected ad and redirects to /users/profile</p>
-
-
-  </div>
-</div>
-<div class="tags">
-  <p class="tag_title">Parameters:</p>
-<ul class="param">
-  
-    <li>
-      
-        <span class='name'>:ad_id,</span>
-      
-      
-        <span class='type'>(<tt>string</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the id of the ad being updated</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>:file,</span>
-      
-      
-        <span class='type'>(<tt>string</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the new image file of the ad being updated</p>
-</div>
-      
-    </li>
-  
-    <li>
-      
-        <span class='name'>:filename,</span>
-      
-      
-        <span class='type'>(<tt>string</tt>)</span>
-      
-      
-      
-        &mdash;
-        <div class='inline'>
-<p>the new name of the image of the ad being updated</p>
-</div>
-      
-    </li>
-  
-</ul>
-
-
-  <p class="tag_title">See Also:</p>
-  <ul class="see">
-    
-      <li>Model#search_file_ending</li>
-    
-      <li>Model#update_ad_picture</li>
-    
-  </ul>
-
-
-
-</div><table class="source_code">
-  <tr>
-    <td>
-      <pre class="lines">
-
-
-120
-121
-122
-123
-124
-125
-126
-127
-128
-129
-130</pre>
-    </td>
-    <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 120</span>
-
-<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/ads/:id/update_picture</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
-    <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:ad_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
-    <span class='id identifier rubyid_original_filename'>original_filename</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:file</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:filename</span><span class='rbracket'>]</span>
-    <span class='id identifier rubyid_file_ending'>file_ending</span> <span class='op'>=</span> <span class='id identifier rubyid_search_file_ending'>search_file_ending</span><span class='lparen'>(</span><span class='id identifier rubyid_original_filename'>original_filename</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='const'>SecureRandom</span><span class='period'>.</span><span class='id identifier rubyid_uuid'>uuid</span> <span class='op'>+</span> <span class='id identifier rubyid_file_ending'>file_ending</span>
-    <span class='id identifier rubyid_save_path'>save_path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./public/img/uploaded_pictures/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_filename'>filename</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_db_path'>db_path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/img/uploaded_pictures/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_filename'>filename</span><span class='rparen'>)</span>
-    <span class='const'>FileUtils</span><span class='period'>.</span><span class='id identifier rubyid_cp'>cp</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:file</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:tempfile</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./public/img/uploaded_pictures/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_filename'>filename</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_update_ad_picture'>update_ad_picture</span><span class='lparen'>(</span><span class='id identifier rubyid_db_path'>db_path</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
-    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/users/profile</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
-<span class='kw'>end</span></pre>
-    </td>
-  </tr>
-</table>
-</div>
-    
-      <div class="method_details ">
-  <h3 class="signature " id="POST__ads_new-instance_method">
-  
-    #<strong>POST /ads/new</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>POST /ads</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1584,6 +1454,8 @@
   <p class="tag_title">See Also:</p>
   <ul class="see">
     
+      <li>Model#search_file_ending</li>
+    
       <li>Model#add_ad</li>
     
   </ul>
@@ -1596,26 +1468,26 @@
       <pre class="lines">
 
 
-60
-61
-62
-63
-64
-65
-66
-67
 68
 69
 70
 71
 72
 73
-74</pre>
+74
+75
+76
+77
+78
+79
+80
+81
+82</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 60</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 68</span>
 
-<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/ads/new</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/ads</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span> 
     <span class='id identifier rubyid_ad_name'>ad_name</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:ad_name</span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:description</span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_category_id'>category_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:category</span><span class='rbracket'>]</span>
@@ -1629,6 +1501,350 @@
     <span class='const'>FileUtils</span><span class='period'>.</span><span class='id identifier rubyid_cp'>cp</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:file</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:tempfile</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./public/img/uploaded_pictures/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_filename'>filename</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
     <span class='id identifier rubyid_add_ad'>add_ad</span><span class='lparen'>(</span><span class='id identifier rubyid_ad_name'>ad_name</span><span class='comma'>,</span> <span class='id identifier rubyid_description'>description</span><span class='comma'>,</span> <span class='id identifier rubyid_db_path'>db_path</span><span class='comma'>,</span> <span class='id identifier rubyid_price'>price</span><span class='comma'>,</span> <span class='id identifier rubyid_category_id'>category_id</span><span class='comma'>,</span> <span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
     <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="POST__ads__id_delete-instance_method">
+  
+    #<strong>POST /ads/:id/delete</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deletes the selected ad and redirects to /users/:id</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>:id,</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the id of the ad being deleted</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>Model#delete_ad</li>
+    
+  </ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+145
+146
+147
+148
+149
+150</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 145</span>
+
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/ads/:id/delete</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:ad_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+    <span class='id identifier rubyid_user_id'>user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_delete_ad'>delete_ad</span><span class='lparen'>(</span><span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/users/:id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="POST__ads__id_update-instance_method">
+  
+    #<strong>POST /ads/:id/update</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Updates the chosen ad and redirects to /users/:id</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>:id,</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the id of the ad being updated</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:ad_name,</span>
+      
+      
+        <span class='type'>(<tt>string</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the new name of the ad being updated</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:description,</span>
+      
+      
+        <span class='type'>(<tt>string</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the new description of the ad being updated</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:category_id,</span>
+      
+      
+        <span class='type'>(<tt>string</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the id of the new category of the ad being updated</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:price,</span>
+      
+      
+        <span class='type'>(<tt>string</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the new price of the ad being updated</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>Model#update_ad</li>
+    
+  </ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 109</span>
+
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/ads/:id/update</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+    <span class='id identifier rubyid_ad_name'>ad_name</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:ad_name</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_description'>description</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:description</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_category_id'>category_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:category</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_price'>price</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:price</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_user_id'>user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+    <span class='id identifier rubyid_update_ad'>update_ad</span><span class='lparen'>(</span><span class='id identifier rubyid_ad_name'>ad_name</span><span class='comma'>,</span> <span class='id identifier rubyid_description'>description</span><span class='comma'>,</span> <span class='id identifier rubyid_price'>price</span><span class='comma'>,</span> <span class='id identifier rubyid_category_id'>category_id</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/users/:id</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="POST__ads__id_update_picture-instance_method">
+  
+    #<strong>POST /ads/:id/update_picture</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Updates the image of the selected ad and redirects to /users/:id</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>:ad_id,</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the id of the ad being updated</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:file,</span>
+      
+      
+        <span class='type'>(<tt>string</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the new image file of the ad being updated</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>:filename,</span>
+      
+      
+        <span class='type'>(<tt>string</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the new name of the image of the ad being updated</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>Model#search_file_ending</li>
+    
+      <li>Model#update_ad_picture</li>
+    
+  </ul>
+
+
+
+</div><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 128</span>
+
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/ads/:id/update_picture</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:ad_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+    <span class='id identifier rubyid_original_filename'>original_filename</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:file</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:filename</span><span class='rbracket'>]</span>
+    <span class='id identifier rubyid_file_ending'>file_ending</span> <span class='op'>=</span> <span class='id identifier rubyid_search_file_ending'>search_file_ending</span><span class='lparen'>(</span><span class='id identifier rubyid_original_filename'>original_filename</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_filename'>filename</span> <span class='op'>=</span> <span class='const'>SecureRandom</span><span class='period'>.</span><span class='id identifier rubyid_uuid'>uuid</span> <span class='op'>+</span> <span class='id identifier rubyid_file_ending'>file_ending</span>
+    <span class='id identifier rubyid_save_path'>save_path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./public/img/uploaded_pictures/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_filename'>filename</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_db_path'>db_path</span> <span class='op'>=</span> <span class='const'>File</span><span class='period'>.</span><span class='id identifier rubyid_join'>join</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/img/uploaded_pictures/</span><span class='tstring_end'>&quot;</span></span><span class='comma'>,</span> <span class='id identifier rubyid_filename'>filename</span><span class='rparen'>)</span>
+    <span class='const'>FileUtils</span><span class='period'>.</span><span class='id identifier rubyid_cp'>cp</span><span class='lparen'>(</span><span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:file</span><span class='rbracket'>]</span><span class='lbracket'>[</span><span class='symbol'>:tempfile</span><span class='rbracket'>]</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>./public/img/uploaded_pictures/</span><span class='embexpr_beg'>#{</span><span class='id identifier rubyid_filename'>filename</span><span class='embexpr_end'>}</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_update_ad_picture'>update_ad_picture</span><span class='lparen'>(</span><span class='id identifier rubyid_db_path'>db_path</span><span class='comma'>,</span> <span class='id identifier rubyid_id'>id</span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/users/:id</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
 <span class='kw'>end</span></pre>
     </td>
   </tr>
@@ -1706,29 +1922,29 @@
       <pre class="lines">
 
 
-221
-222
-223
-224
-225
-226
-227
-228
-229
-230
-231
-232
-233
-234
-235
-236
-237
-238
-239
-240</pre>
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 221</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 269</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/login</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='kw'>if</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:login_tries</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='kw'>nil</span>
@@ -1744,10 +1960,10 @@
         <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='kw'>else</span>
         <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:login_tries</span><span class='rbracket'>]</span> <span class='op'>+=</span> <span class='int'>1</span>
-        <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/login_error</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/error/login</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span>
     <span class='kw'>end</span>
     <span class='kw'>if</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:login_tries</span><span class='rbracket'>]</span> <span class='op'>&gt;</span> <span class='int'>3</span>
-        <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/too_many_login_tries</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/error/too_many_login_tries</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1756,9 +1972,9 @@
 </div>
     
       <div class="method_details ">
-  <h3 class="signature " id="POST__users_new-instance_method">
+  <h3 class="signature " id="POST__users-instance_method">
   
-    #<strong>POST /users/new</strong>  &#x21d2; <tt>Object</tt> 
+    #<strong>POST /users</strong>  &#x21d2; <tt>Object</tt> 
   
 
   
@@ -1767,7 +1983,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Creates a new user and redirects to / if successful, if the password and the confirmed password do not match the route redirects to /register_error</p>
+<p>Creates a new user and redirects to / if successful, if the password and the confirmed password do not match the route redirects to /error/register</p>
 
 
   </div>
@@ -1858,25 +2074,25 @@
       <pre class="lines">
 
 
-159
-160
-161
-162
-163
-164
-165
-166
 167
 168
 169
 170
 171
-172</pre>
+172
+173
+174
+175
+176
+177
+178
+179
+180</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 159</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 167</span>
 
-<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/users/new</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/users</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_username'>username</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:username</span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_password'>password</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:password</span><span class='rbracket'>]</span>
     <span class='id identifier rubyid_password_confirm'>password_confirm</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:password_confirm</span><span class='rbracket'>]</span>
@@ -1887,7 +2103,53 @@
         <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:group_id</span><span class='rbracket'>]</span> <span class='op'>=</span> <span class='id identifier rubyid_array'>array</span><span class='lbracket'>[</span><span class='int'>1</span><span class='rbracket'>]</span>
         <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
     <span class='kw'>else</span>
-        <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/register_error</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+        <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/error/register</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+<span class='kw'>end</span></pre>
+    </td>
+  </tr>
+</table>
+</div>
+    
+      <div class="method_details ">
+  <h3 class="signature " id="POST__users__id_delete-instance_method">
+  
+    #<strong>POST /users/:id/delete</strong>  &#x21d2; <tt>Object</tt> 
+  
+
+  
+
+  
+</h3><table class="source_code">
+  <tr>
+    <td>
+      <pre class="lines">
+
+
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207</pre>
+    </td>
+    <td>
+      <pre class="code"><span class="info file"># File 'app.rb', line 197</span>
+
+<span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/users/:id/delete</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
+    <span class='id identifier rubyid_user_id'>user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='id identifier rubyid_user_id'>user_id</span> <span class='op'>||</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:group_id</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='int'>2</span>
+        <span class='id identifier rubyid_delete_user'>delete_user</span><span class='lparen'>(</span><span class='id identifier rubyid_user_id'>user_id</span><span class='rparen'>)</span>
+    <span class='kw'>end</span>
+    <span class='kw'>if</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:group_id</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='int'>2</span>
+        <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/admin/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='kw'>else</span>
+        <span class='id identifier rubyid_redirect'>redirect</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
     <span class='kw'>end</span>
 <span class='kw'>end</span></pre>
     </td>
@@ -1900,9 +2162,9 @@
 </div>
 
       <div id="footer">
-  Generated on Sun May 16 11:55:28 2021 by
+  Generated on Wed May 19 16:19:18 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
-  0.9.26 (ruby-2.7.2).
+  0.9.26 (ruby-2.7.3).
 </div>
 
     </div>

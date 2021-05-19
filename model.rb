@@ -92,12 +92,6 @@ module Model
     return [user_id, group_id]
   end
 
-  # def get_group_id(username, phone_number)
-  #   db = SQLite3::Database.new('db/handel.db')
-  #   db.results_as_hash = true
-  #   result = db.execute("SELECT group_id FROM user_to_group WHERE username = ? AND phone_number = ?", username, phone_number)
-  # end
-
   def login(username, password)
     db = SQLite3::Database.new('db/handel.db')
     db.results_as_hash = true
@@ -117,16 +111,6 @@ module Model
     end
   end
 
-  # def get_user_preferences(user_id)
-  #   db = SQLite3::Database.new('db/handel.db')
-  #   db.results_as_hash = true
-  #   result = db.execute("SELECT category_id FROM users_categories WHERE user_id = ?",user_id)
-  #   user_preferences = result.map do |el|
-  #     db.execute("SELECT * FROM categories WHERE category_id = ?", el["category_id"]).first
-  #   end
-  #   return user_preferences
-  # end
-
   def get_ads()
     db = SQLite3::Database.new('db/handel.db')
     db.results_as_hash = true
@@ -134,7 +118,7 @@ module Model
     return result
   end
 
-  def get_user_content()
+  def get_all_user_content()
     db = SQLite3::Database.new('db/handel.db')
     db.results_as_hash = true
     return db.execute("SELECT * FROM users")
@@ -144,6 +128,24 @@ module Model
     db = SQLite3::Database.new('db/handel.db')
     db.results_as_hash = true
     return db.execute("SELECT * FROM user_to_group")
+  end
+
+  def get_groups()
+    db = SQLite3::Database.new('db/handel.db')
+    db.results_as_hash = true
+    return db.execute("SELECT * FROM groups")
+  end
+
+  def get_user_content(user_id)
+    db = SQLite3::Database.new('db/handel.db')
+    db.results_as_hash = true
+    return db.execute("SELECT * FROM users WHERE user_id = ?", user_id).first
+  end
+
+  def get_one_user_to_group(user_id)
+    db = SQLite3::Database.new('db/handel.db')
+    db.results_as_hash = true
+    return db.execute("SELECT * FROM user_to_group WHERE user_id = ?", user_id).first
   end
 
   def all_of(*strings)
@@ -156,6 +158,21 @@ module Model
     return db.execute("SELECT user_id FROM ad_to_user WHERE ad_id = ?", ad_id).first
   end
 
+  def admin_update_useraccess(user_id, group_id)
+    db = SQLite3::Database.new('db/handel.db')
+    db.results_as_hash = true
+    db.execute("UPDATE user_to_group SET group_id = ? WHERE user_id = ?", group_id, user_id)    
+  end
 
+  def delete_user(user_id)
+    db = SQLite3::Database.new('db/handel.db')
+    db.results_as_hash = true
+    db.execute("DELETE FROM users WHERE user_id = ?", user_id)
+    db.execute("DELETE FROM user_to_group WHERE user_id = ?", user_id)
+    array = db.execute("SELECT * FROM ad_to_user WHERE user_id = ?", user_id)
+    array.each do |ad_id|
+      db.execute("DELETE FROM advertisements WHERE ad_id = ?", ad_id)
+    end
+  end
 
 end

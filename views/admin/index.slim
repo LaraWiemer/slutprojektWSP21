@@ -1,0 +1,10 @@
+-users.each do |user|
+    p = user["username"]
+
+    form action="/users/#{user['user_id'].to_i}/delete" method="post"
+        input type="hidden" name="user_id" value="#{user["user_id"]}"
+        input type="submit" value="Ta bort"
+    form action="/admin/#{user['user_id'].to_i}/edit" method="get"
+        input type="hidden" name="user_id" value="#{user["user_id"]}"
+        input type="submit" value="Ändra behörighet"
+
