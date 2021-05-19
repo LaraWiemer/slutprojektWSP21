@@ -573,7 +573,9 @@
   
 
   
-    <span class="summary_desc"><div class='inline'></div></span>
+    <span class="summary_desc"><div class='inline'>
+<p>Deletes a user, can only be accessed if you are the user being deleted or if you are an admin.</p>
+</div></span>
   
 </li>
 
@@ -677,14 +679,14 @@
       <pre class="lines">
 
 
+213
 214
 215
 216
-217
-218</pre>
+217</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 214</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 213</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/admin/</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_users'>users</span> <span class='op'>=</span> <span class='id identifier rubyid_get_all_user_content'>get_all_user_content</span><span class='lparen'>(</span><span class='rparen'>)</span>
@@ -744,16 +746,16 @@
       <pre class="lines">
 
 
+223
 224
 225
 226
 227
 228
-229
-230</pre>
+229</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 224</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 223</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/admin/:id/edit</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
@@ -931,12 +933,12 @@
       <pre class="lines">
 
 
+292
 293
-294
-295</pre>
+294</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 293</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 292</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/error</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
   <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/error/not_logged_in&quot;</span><span class='rparen'>)</span>  
@@ -974,12 +976,12 @@
       <pre class="lines">
 
 
+299
 300
-301
-302</pre>
+301</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 300</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 299</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/error/login</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/error/login&quot;</span><span class='rparen'>)</span>
@@ -1017,12 +1019,12 @@
       <pre class="lines">
 
 
+306
 307
-308
-309</pre>
+308</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 307</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 306</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/error/register</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:&quot;/error/register&quot;</span><span class='rparen'>)</span>
@@ -1060,12 +1062,12 @@
       <pre class="lines">
 
 
+258
 259
-260
-261</pre>
+260</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 259</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 258</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/login</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_slim'>slim</span><span class='lparen'>(</span><span class='symbol'>:login</span><span class='rparen'>)</span>
@@ -1130,14 +1132,14 @@
       <pre class="lines">
 
 
+249
 250
 251
 252
-253
-254</pre>
+253</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 250</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 249</span>
 
 <span class='id identifier rubyid_get'>get</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/users/:id</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_id'>id</span> <span class='op'>=</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
@@ -1310,15 +1312,15 @@
       <pre class="lines">
 
 
+237
 238
 239
 240
 241
-242
-243</pre>
+242</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 238</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 237</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/admin/:id/update</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_user_id'>user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span>
@@ -1922,6 +1924,7 @@
       <pre class="lines">
 
 
+268
 269
 270
 271
@@ -1940,11 +1943,10 @@
 284
 285
 286
-287
-288</pre>
+287</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 269</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 268</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>/login</span><span class='tstring_end'>&#39;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='kw'>if</span> <span class='id identifier rubyid_session'>session</span><span class='lbracket'>[</span><span class='symbol'>:login_tries</span><span class='rbracket'>]</span> <span class='op'>==</span> <span class='kw'>nil</span>
@@ -1983,7 +1985,7 @@
 </h3><div class="docstring">
   <div class="discussion">
     
-<p>Creates a new user and redirects to / if successful, if the password and the confirmed password do not match the route redirects to /error/register</p>
+<p>Creates a new user and redirects to / if successful, if the password and the confirmed password do not match the route redirects to /error/register. If the creation of the user was successful the user is also logged in.</p>
 
 
   </div>
@@ -2120,12 +2122,53 @@
   
 
   
-</h3><table class="source_code">
+</h3><div class="docstring">
+  <div class="discussion">
+    
+<p>Deletes a user, can only be accessed if you are the user being deleted or if you are an admin</p>
+
+
+  </div>
+</div>
+<div class="tags">
+  <p class="tag_title">Parameters:</p>
+<ul class="param">
+  
+    <li>
+      
+        <span class='name'>:user_id,</span>
+      
+      
+        <span class='type'>(<tt>Integer</tt>)</span>
+      
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>the id of the user being deleted</p>
+</div>
+      
+    </li>
+  
+</ul>
+
+
+  <p class="tag_title">See Also:</p>
+  <ul class="see">
+    
+      <li>Model#delete_user</li>
+    
+  </ul>
+
+
+
+</div><table class="source_code">
   <tr>
     <td>
       <pre class="lines">
 
 
+196
 197
 198
 199
@@ -2135,11 +2178,10 @@
 203
 204
 205
-206
-207</pre>
+206</pre>
     </td>
     <td>
-      <pre class="code"><span class="info file"># File 'app.rb', line 197</span>
+      <pre class="code"><span class="info file"># File 'app.rb', line 196</span>
 
 <span class='id identifier rubyid_post'>post</span><span class='lparen'>(</span><span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/users/:id/delete</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span> <span class='kw'>do</span>
     <span class='id identifier rubyid_user_id'>user_id</span> <span class='op'>=</span> <span class='id identifier rubyid_params'>params</span><span class='lbracket'>[</span><span class='symbol'>:user_id</span><span class='rbracket'>]</span><span class='period'>.</span><span class='id identifier rubyid_to_i'>to_i</span>
@@ -2162,7 +2204,7 @@
 </div>
 
       <div id="footer">
-  Generated on Wed May 19 16:19:18 2021 by
+  Generated on Wed May 19 22:20:54 2021 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.26 (ruby-2.7.3).
 </div>

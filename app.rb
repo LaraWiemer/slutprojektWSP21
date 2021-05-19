@@ -13,7 +13,7 @@ include Model
 
 #Checks if the user is logged in, when there is an ad_id it checks if the ad belongs to the user. If the ad does not belong to the user they get redirected to /error, otherwise they go on to the wanted route
 #@param [String] :ad_id, the id of the ad in question
-#@see Model#
+#@see Model#check_user_id
 
 before all_of("/ads", "/ads/new", "/ads/:id/edit", "/ads/:id/update", "/ads/:id/delete", "/ads/:id/update", "/ads/:id/update_picture", "/users/:id") do
     ad_id = params[:ad_id]
@@ -22,7 +22,7 @@ before all_of("/ads", "/ads/new", "/ads/:id/edit", "/ads/:id/update", "/ads/:id/
     end
     if ad_id != nil
         result = check_user_id_ad(ad_id)
-        if session[:user_id] == result["ad_id"]
+        if session[:user_id] != result["ad_id"]
             redirect("/error")
         end
     end
@@ -157,7 +157,7 @@ get("/users/new") do
 end
 
 
-#Creates a new user and redirects to / if successful, if the password and the confirmed password do not match the route redirects to /error/register
+#Creates a new user and redirects to / if successful, if the password and the confirmed password do not match the route redirects to /error/register. If the creation of the user was successful the user is also logged in.
 #@param [string] :username, the username of the user being created
 #@param [string] :password, the password of the user being created
 #@param [string] :password_confirm, the confirmation of the password of the user being created
@@ -192,7 +192,6 @@ end
 #Deletes a user, can only be accessed if you are the user being deleted or if you are an admin
 #@param [Integer] :user_id, the id of the user being deleted
 #@see Model#delete_user
-
 
 post("/users/:id/delete") do
     user_id = params[:user_id].to_i
